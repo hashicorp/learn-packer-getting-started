@@ -12,14 +12,8 @@ source "docker" "example" {
   commit = true
 }
 
-source "docker" "example-bionic" {
-  image  = "ubuntu:bionic"
-  commit = true
-}
-
 build {
   sources = [
-    "source.docker.example-bionic",
     "source.docker.example",
   ]
   provisioner "shell" {
@@ -30,5 +24,22 @@ build {
       "echo Adding file to Docker Container",
       "echo \"FOO is $FOO\" > example.txt"
     ]
+  }
+
+  post-processors {
+    post-processor "docker-tag" {
+      repository = "swampdragons/testpush"
+      tags       = ["vanilla-icecream", "tag2"]
+    }
+    post-processor "docker-push" {}
+  }
+
+  post-processors {
+    post-processor "vagrant" {}
+    post-processor "vagrant-cloud" {
+      access_token = var.vagrant_token
+      version      = "0.2"
+      box_tag      = "myuser/packerbox"
+    }
   }
 }
