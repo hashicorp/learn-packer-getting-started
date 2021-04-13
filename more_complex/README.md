@@ -5,13 +5,13 @@ used in Packer builds. Organizing related builds within directories makes it
 easier to reuse code and use variables. Here we split our build into several
 files:
 
-1. "init.pkr.hcl" describes all of our required plugins, required Packer
+1. `init.pkr.hcl` describes all of our required plugins, required Packer
    version, etc.
-1. "variables.pkr.hcl" declares all of the variables we will use.
-1. "dev.pkrvars.hcl" declares a set of possible values for the variables declared in "variables.pkr.hcl"
-1. "prod.pkrvars.hcl" declares another set of possible values for the variables declared in "variables.pkr.hcl"
-1. "sources.pkr.hcl" defines our sources
-1. "build.pkr.hcl" defines a build
+1. `variables.pkr.hcl` declares all of the variables we will use.
+1. `dev.pkrvars.hcl` declares a set of possible values for the variables declared in "variables.pkr.hcl"
+1. `prod.pkrvars.hcl` declares another set of possible values for the variables declared in "variables.pkr.hcl"
+1. `sources.pkr.hcl` defines our sources
+1. `build.pkr.hcl` defines a build
 
 To run Packer using these templates:
 
