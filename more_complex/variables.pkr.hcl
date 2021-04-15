@@ -1,4 +1,4 @@
 variable "flavor" {
-  type = string
+  type     = string
   default = "vanilla"
 }
