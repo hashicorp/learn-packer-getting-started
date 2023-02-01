@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MIT
+
 variable "ami_name" {
   type = string
   # This example demostrates that you can load variables from the environment.
