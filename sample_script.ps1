@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: MIT
+
 Write-Host "PACKER_BUILD_NAME is an env var Packer automatically sets for you."
 Write-Host "...or you can set it in your builder variables."
 Write-Host "The default for this builder is:" $Env:PACKER_BUILD_NAME
